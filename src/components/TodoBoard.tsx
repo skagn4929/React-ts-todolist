@@ -15,6 +15,7 @@ const TodoBoard: React.FC<TodoBoardProps> = ({ todoList }) => {
       setTodos([...todos, inputValue]);
       setInputValue("");
     }
+
   };
   const handleDelete = (index: number) => { //1
     // #1
@@ -30,6 +31,7 @@ const TodoBoard: React.FC<TodoBoardProps> = ({ todoList }) => {
   };
 
 
+
   const handleUpdate = (index: number) => {
     const newTodos = todos.map((todo, innerIndex) => { // 0,1,2    2 === 1
       if (innerIndex === index) {
@@ -42,9 +44,21 @@ const TodoBoard: React.FC<TodoBoardProps> = ({ todoList }) => {
     setTodos(newTodos)
     setUpdateValue("")
   }
+  const getLocalStorage = () => {
+    const todoList = localStorage.getItem("todoList")
+    if (todoList) {
+      setTodos(JSON.parse(todoList))
+    }
+  }
+
+  const saveLocalStorage = () => {
+    localStorage.setItem("todoList", JSON.stringify(todos))
+  }
 
   return (
     <>
+      <button onClick={saveLocalStorage}>로컬스토리지 저장</button>
+      <button onClick={getLocalStorage}> 로컬스토리지 불러오기</button>
       <div className="todoboard">
         <input
           className="inputbox"
