@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 
 type TodoItemProps = {
   item: string;
@@ -22,7 +22,13 @@ const TodoItem: React.FC<TodoItemProps> = ({
   const handleClickUpdate = () => {
     handleUpdate();
     setIsUpdateVisible(false);
+    setUpdateValue("");
   };
+  useEffect(() => {
+    if (isUpdateVisible) {
+      setUpdateValue("");
+    }
+  }, [isUpdateVisible, setUpdateValue]);
   return (
     <div>
       <input className="itembox" value={item}></input>
