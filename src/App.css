@@ -10,23 +10,59 @@
   text-align: center;
 }
 
+.localbox {
+  margin-top: 10px;
+}
+
+.localbox > button {
+  border-radius: 4px;
+}
+
+.localcenter {
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
 .todoboard {
   margin-top: 20px;
 }
 
 .addbutton {
+  font-size: large;
   margin-left: 10px;
+  border-radius: 4px;
 }
 
 .delbutton {
   margin-left: 10px;
   margin-top: 10px;
+  border-radius: 4px;
 }
 
 .inputbox {
-  width: 500px;
+  width: 600px;
+  border: 5px solid black;
+  border-radius: 4px;
 }
 
 .itembox {
+  width: 500px;
+}
+
+.upvalue {
+  margin: 10px;
+}
+
+.upbutton {
+  margin-left: 5px;
+  border-radius: 4px;
+}
+
+.chbutton {
+  margin-left: 10px;
+  border-radius: 4px;
+}
+
+.upinput {
   width: 500px;
 }

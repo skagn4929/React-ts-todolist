@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 
 type TodoItemProps = {
   item: string;
@@ -6,6 +6,8 @@ type TodoItemProps = {
   handleUpdate: () => void;
   updateValue: string;
   setUpdateValue: React.Dispatch<React.SetStateAction<string>>;
+  isUpdateVisible: boolean;
+  setIsUpdateVisible: React.Dispatch<React.SetStateAction<boolean>>;
 };
 const TodoItem: React.FC<TodoItemProps> = ({
   item,
@@ -13,30 +15,40 @@ const TodoItem: React.FC<TodoItemProps> = ({
   updateValue,
   setUpdateValue,
   handleUpdate,
+  isUpdateVisible,
+  setIsUpdateVisible,
 }) => {
-  const [isShowUpdateInput, setIsShowUpdateInput] = useState(false);
+  // const [isShowUpdateInput, setIsShowUpdateInput] = useState(false);
   const handleClickUpdate = () => {
     handleUpdate();
-    setIsShowUpdateInput(false);
+    setIsUpdateVisible(false);
   };
   return (
     <div>
-      {isShowUpdateInput && (
-        <>
-          <input
-            type="text"
-            value={updateValue}
-            onChange={(event) => setUpdateValue(event.target.value)}
-          />
-          <button onClick={handleClickUpdate}>확인</button>
-        </>
-      )}
       <input className="itembox" value={item}></input>
       <button className="delbutton" onClick={onDelete}>
         삭제
       </button>
-      {!isShowUpdateInput && (
-        <button onClick={() => setIsShowUpdateInput(true)}>수정</button>
+      {!isUpdateVisible && (
+        <button className="upbutton" onClick={() => setIsUpdateVisible(true)}>
+          수정
+        </button>
+      )}
+      {isUpdateVisible && (
+        <>
+          <div className="upvalue">
+            <input
+              className="upinput"
+              type="text"
+              value={updateValue}
+              onChange={(event) => setUpdateValue(event.target.value)}
+              autoFocus
+            />
+            <button className="chbutton" onClick={handleClickUpdate}>
+              확인
+            </button>
+          </div>
+        </>
       )}
       {/* <button onClick={() => setIsShowUpdateInput((prev) => !prev)}>
         수정

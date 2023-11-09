@@ -9,6 +9,9 @@ const TodoBoard: React.FC<TodoBoardProps> = ({ todoList }) => {
   const [todos, setTodos] = useState(todoList);
   const [inputValue, setInputValue] = useState("");
   const [updateValue, setUpdateValue] = useState("");
+  const [visibleUpdateIndex, setVisibleUpdateIndex] = useState<number | null>(
+    null
+  );
   const handleAdd = () => {
     if (inputValue.trim() !== "") {
       setTodos([...todos, inputValue]);
@@ -60,9 +63,14 @@ const TodoBoard: React.FC<TodoBoardProps> = ({ todoList }) => {
 
   return (
     <>
-      <button onClick={saveLocalStorage}>로컬스토리지 저장</button>
-      <button onClick={getLocalStorage}> 로컬스토리지 불러오기</button>
-      <button onClick={resetLocalStorage}> 로컬스토리지 초기화</button>
+      <div className="localbox">
+        <button onClick={saveLocalStorage}>로컬스토리지 저장</button>
+        <button className="localcenter" onClick={getLocalStorage}>
+          {" "}
+          로컬스토리지 불러오기
+        </button>
+        <button onClick={resetLocalStorage}> 로컬스토리지 초기화</button>
+      </div>
       <div className="todoboard">
         <input
           className="inputbox"
@@ -80,6 +88,10 @@ const TodoBoard: React.FC<TodoBoardProps> = ({ todoList }) => {
             updateValue={updateValue}
             setUpdateValue={setUpdateValue}
             handleUpdate={() => handleUpdate(index)}
+            isUpdateVisible={visibleUpdateIndex === index}
+            setIsUpdateVisible={(isVisible) =>
+              setVisibleUpdateIndex(isVisible ? index : null)
+            }
           />
         ))}
       </div>
