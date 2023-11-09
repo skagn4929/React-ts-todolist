@@ -33,7 +33,7 @@ const TodoBoard: React.FC<TodoBoardProps> = ({ todoList }) => {
     const newTodos = todos.map((todo, innerIndex) => {
       // 0,1,2    2 === 1
       if (innerIndex === index) {
-        return updateValue;
+        return updateValue || todo;
       }
       return todo;
     });

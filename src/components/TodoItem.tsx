@@ -15,23 +15,33 @@ const TodoItem: React.FC<TodoItemProps> = ({
   handleUpdate,
 }) => {
   const [isShowUpdateInput, setIsShowUpdateInput] = useState(false);
+  const handleClickUpdate = () => {
+    handleUpdate();
+    setIsShowUpdateInput(false);
+  };
   return (
     <div>
       {isShowUpdateInput && (
-        <input
-          type="text"
-          value={updateValue}
-          onChange={(event) => setUpdateValue(event.target.value)}
-        />
+        <>
+          <input
+            type="text"
+            value={updateValue}
+            onChange={(event) => setUpdateValue(event.target.value)}
+          />
+          <button onClick={handleClickUpdate}>확인</button>
+        </>
       )}
       <input className="itembox" value={item}></input>
       <button className="delbutton" onClick={onDelete}>
         삭제
       </button>
-      <button onClick={() => setIsShowUpdateInput((prev) => !prev)}>
+      {!isShowUpdateInput && (
+        <button onClick={() => setIsShowUpdateInput(true)}>수정</button>
+      )}
+      {/* <button onClick={() => setIsShowUpdateInput((prev) => !prev)}>
         수정
-      </button>
-      {isShowUpdateInput && (
+      </button> */}
+      {/* {isShowUpdateInput && (
         <button
           onClick={() => {
             setIsShowUpdateInput(false);
@@ -40,7 +50,7 @@ const TodoItem: React.FC<TodoItemProps> = ({
         >
           확인
         </button>
-      )}
+      )} */}
     </div>
   );
 };
