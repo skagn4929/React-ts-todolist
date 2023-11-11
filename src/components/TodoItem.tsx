@@ -31,7 +31,7 @@ const TodoItem: React.FC<TodoItemProps> = ({
   }, [isUpdateVisible, setUpdateValue]);
   return (
     <div>
-      <input className="itembox" value={item}></input>
+      <input className="itembox" value={item} readOnly></input>
       <button className="delbutton" onClick={onDelete}>
         삭제
       </button>
