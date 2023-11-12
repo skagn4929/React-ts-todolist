@@ -32,9 +32,11 @@ const TodoItem: React.FC<TodoItemProps> = ({
   return (
     <div>
       <input className="itembox" value={item} readOnly></input>
-      <button className="delbutton" onClick={onDelete}>
-        삭제
-      </button>
+      {!isUpdateVisible && (
+        <button className="delbutton" onClick={onDelete}>
+          삭제
+        </button>
+      )}
       {!isUpdateVisible && (
         <button className="upbutton" onClick={() => setIsUpdateVisible(true)}>
           수정

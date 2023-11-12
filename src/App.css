@@ -47,6 +47,7 @@
 
 .itembox {
   width: 500px;
+  margin-top: 10px;
 }
 
 .upvalue {
@@ -59,10 +60,11 @@
 }
 
 .chbutton {
-  margin-left: 10px;
+  margin-left: 5px;
   border-radius: 4px;
 }
 
 .upinput {
   width: 500px;
+  margin-left: 48.5px;
 }
