@@ -21,7 +21,7 @@ React와 TypeScript를 사용하여 개발한 [To-Do-List](//skagn4929.github.io
 7. "로컬스토리지 초기화" 버튼을 클릭하여 저장된 할 일 목록을 초기화합니다.
 
 ## 4. 컴포넌트 상세 내용
-### ※ App 컴포넌트
+### ※ App 컴포넌트 ([APP.tsx](https://github.com/skagn4929/React-ts-todolist/blob/main/src/App.tsx))
 
 State   
 
@@ -32,7 +32,7 @@ Render
 - **TodoBoard** 컴포넌트를 렌더링하며 초기 할 일 목록을 전달합니다.
 
 ---
-### ※ TodoBoard 컴포넌트
+### ※ TodoBoard 컴포넌트 ([TodoBoard.tsx](https://github.com/skagn4929/React-ts-todolist/blob/main/src/components/TodoBoard.tsx))
 
 Props   
 
@@ -59,7 +59,7 @@ Render
 - 입력 필드, 추가 버튼, 할 일 목록, 로컬 스토리지 관련 버튼 등으로 구성된 화면을 렌더링합니다.
 
 ---
-### ※ TodoItem 컴포넌트
+### ※ TodoItem 컴포넌트 ([TodoItem.tsx](https://github.com/skagn4929/React-ts-todolist/blob/main/src/components/TodoItem.tsx))
 
 Props   
 
