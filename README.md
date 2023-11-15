@@ -13,9 +13,26 @@ React와 TypeScript를 사용하여 개발한 [To-Do-List](//skagn4929.github.io
 
 ## 3. 프로젝트 사용법
 1. 웹 브라우저에서 [To-Do-List](//skagn4929.github.io/React-ts-todolist/)를 엽니다.
+
+![1](https://github.com/skagn4929/React-ts-todolist/assets/134206709/859424fb-4154-4fb7-aa0a-0ff6e49b869e)
+
 2. 할 일을 입력하고 "추가" 버튼을 클릭하여 할 일을 추가합니다.
+
+![11](https://github.com/skagn4929/React-ts-todolist/assets/134206709/707626e7-1cd8-4a9c-a453-2c25b05095bd)
+![111](https://github.com/skagn4929/React-ts-todolist/assets/134206709/b5102994-2a8f-4f2b-b8ca-c67a005dfb54)
+
 3. 추가된 할 일 목록에서 "삭제" 버튼을 클릭하여 할 일을 삭제합니다.
+
+![22](https://github.com/skagn4929/React-ts-todolist/assets/134206709/2c385136-40c7-41fe-ac3b-86f2789e27e3)
+![1](https://github.com/skagn4929/React-ts-todolist/assets/134206709/027acf23-4e17-4af2-9ffd-6884516457eb)
+
 4. "수정" 버튼을 클릭하여 할 일을 수정할 수 있습니다.
+
+![33](https://github.com/skagn4929/React-ts-todolist/assets/134206709/f3f3f846-ee29-4cb7-99aa-34681ab2bdfb)
+![333](https://github.com/skagn4929/React-ts-todolist/assets/134206709/cbad7f2e-07c3-4142-90b2-68b5fbf9bdab)
+![3333](https://github.com/skagn4929/React-ts-todolist/assets/134206709/8a8ea12d-d917-442a-8484-f417750ba570)
+
+
 5. "로컬스토리지 저장" 버튼을 클릭하여 현재 할 일 목록을 로컬 스토리지에 저장합니다.
 6. "로컬스토리지 불러오기" 버튼을 클릭하여 저장된 할 일 목록을 불러옵니다.
 7. "로컬스토리지 초기화" 버튼을 클릭하여 저장된 할 일 목록을 초기화합니다.
